@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Pressable, Text } from 'react-native';
+import { Pressable, Text, ToastAndroid } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 
 import { styles } from './BatButtonStyles';
@@ -16,7 +16,11 @@ export function BatButton() {
 
   function handleCopyButton() {
     Clipboard.setStringAsync(pass);
-    alert('Password copied to clipboard!');
+    //alert('Password copied to clipboard!');
+    ToastAndroid.showWithGravity(
+      'Copiado para clipboard!',
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER,)
   }
 
   return (
